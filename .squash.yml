@@ -5,4 +5,7 @@ deployments:
     kubernetes_default_image: rss-site
     kubernetes_port_mapping: redmine:3000
     subdomain_port_mapping: redmine:3000
-
+    docker_registry:
+      server: r.cfcr.io
+      username: wisedrette
+      password: $REGISTRY_PASSWORD
