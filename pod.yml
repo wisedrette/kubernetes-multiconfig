@@ -8,5 +8,8 @@
    containers:
      - name: test
        image: r.cfcr.io/wisedrette/wisedrette/dockertest:master
+       imagePullPolicy: Always
        ports:
          - containerPort: 80
+   imagePullSecrets:
+     - name: myregistrykey
