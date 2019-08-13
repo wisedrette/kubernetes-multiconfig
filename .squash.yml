@@ -9,3 +9,7 @@ deployments:
       server: r.cfcr.io
       username: wisedrette
       password: $REGISTRY_PASSWORD
+    kubernetes_secrets:
+      - generic ssh-key-secret --from-file=ssh-privatekey=/path/to/.ssh/id_rsa --from-file=ssh-publickey=/path/to/.ssh/id_rsa.pub
+      - generic db-user-pass --from-file=./username.txt --from-file=./password.txt
+
