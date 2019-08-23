@@ -6,8 +6,8 @@ deployments:
     kubernetes_port_mapping: redmine:3000
     subdomain_port_mapping: redmine:3000
     docker_registry:
-      server: r.cfcr.io
-      username: wisedrette
+      server: registrytest-docker.jfrog.io
+      username: admin
       password: $REGISTRY_PASSWORD
     kubernetes_secrets:
       - generic ssh-key-secret --from-file=ssh-privatekey=/home/test-instance/.ssh/id_rsa --from-file=ssh-publickey=/home/test-instance/.ssh/id_rsa.pub
