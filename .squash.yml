@@ -8,7 +8,7 @@ deployments:
     docker_registry:
       server: registrytest-docker.jfrog.io
       username: admin
-      password: $REGISTRY_PASSWORD
+      password: $REGISTRY_PASSWORD_ARTIFACTORY
     kubernetes_secrets:
       - generic ssh-key-secret --from-file=ssh-privatekey=/home/test-instance/.ssh/id_rsa --from-file=ssh-publickey=/home/test-instance/.ssh/id_rsa.pub
       - generic db-user-pass --from-file=./username.txt --from-file=./password.txt
