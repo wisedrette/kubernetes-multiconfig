@@ -7,7 +7,7 @@
  spec:
    containers:
      - name: test
-       image: r.cfcr.io/wisedrette/wisedrette/dockertest:master
+       image: registrytest-docker.jfrog.io/custom-image:latest
        imagePullPolicy: Always
        ports:
          - containerPort: 80
