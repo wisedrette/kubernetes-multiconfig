@@ -5,4 +5,6 @@ deployments:
       - redis:${TAG}
     deployment_type: kubernetes
     use_kubernetes_registry: false
-    port_forwarding: 80:2368
+    port_forwarding: 
+      - 80:2368
+      - 6379:6379
