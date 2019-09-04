@@ -2,4 +2,4 @@ deployments:
   nginx:
     kubernetes_build_image: wordpress
     deployment_type: kubernetes
-    use_kubernetes_registry: true
+    use_kubernetes_registry: false
