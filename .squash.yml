@@ -1,7 +1,8 @@
 deployments:
   nginx:
-    kubernetes_build_image: 
-      - wordpress
+    dockerimage: 
+      - ghost
       - redis:${TAG}
     deployment_type: kubernetes
     use_kubernetes_registry: false
+    port_forwarding: 80:2368
