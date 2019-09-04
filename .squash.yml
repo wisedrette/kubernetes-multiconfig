@@ -1,5 +1,7 @@
 deployments:
   nginx:
-    kubernetes_build_image: wordpress
+    kubernetes_build_image: 
+      - wordpress
+      - redis
     deployment_type: kubernetes
     use_kubernetes_registry: false
