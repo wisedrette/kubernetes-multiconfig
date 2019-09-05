@@ -1,7 +1,7 @@
 deployments:
   nginx:
     dockerimage: 
-      - ghost
+      - ghost:${TAG}
       - redis:${TAG}
     deployment_type: kubernetes
     use_kubernetes_registry: false
