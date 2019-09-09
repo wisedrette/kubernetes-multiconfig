@@ -15,3 +15,5 @@ deployments:
     port_forwarding: 
       - 80:80
       - 3000:80
+    subdomain_port_mapping:
+      - nginx:3000
