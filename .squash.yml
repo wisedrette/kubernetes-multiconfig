@@ -2,7 +2,7 @@ deployments:
   nginx:
     dockerimage: 
       - r.cfcr.io/wisedrette/wisedrette/dockertest:master
-      - cloud.canister.io:5000/wisedrette/obscure-name
+      - nginx
     docker_registry:
       - server: r.cfcr.io 
         username: wisedrette
