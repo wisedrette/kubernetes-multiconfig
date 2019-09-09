@@ -2,7 +2,7 @@ deployments:
   nginx:
     dockerimage: 
       - r.cfcr.io/wisedrette/wisedrette/dockertest:master
-      - nginx
+      - cloud.canister.io:5000/wisedrette/obscure-name
     docker_registry:
       - server: r.cfcr.io 
         username: wisedrette
@@ -17,3 +17,5 @@ deployments:
       - 3000:80
     subdomain_port_mapping:
       - nginx:3000
+    kubernetes_port_mapping:
+      - obscure-name:3000
