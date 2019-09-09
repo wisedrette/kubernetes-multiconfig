@@ -1,10 +1,17 @@
 deployments:
   nginx:
     dockerimage: 
-      - ghost:${TAG}
-      - redis:${TAG}
+      - r.cfcr.io/wisedrette/wisedrette/dockertest:master
+      - cloud.canister.io:5000/wisedrette/obscure-name
+    docker_registry:
+      - server: r.cfcr.io 
+        username: wisedrette
+        password: $REGISTRY_PASSWORD
+      - server: cloud.canister.io:5000
+        username: wisedrette
+        password: $REGISTRY_PASSWORD_CANISTER
     deployment_type: kubernetes
     use_kubernetes_registry: false
     port_forwarding: 
-      - 80:2368
-      - 6379:6379
+      - 80:80
+      - 3000:80
