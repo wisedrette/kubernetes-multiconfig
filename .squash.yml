@@ -18,4 +18,4 @@ deployments:
     subdomain_port_mapping:
       - nginx:3000
     kubernetes_port_mapping:
-      - obscure-name:3000
+      - obscure-name:3000:80
