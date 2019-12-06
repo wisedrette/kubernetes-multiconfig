@@ -1,5 +1,7 @@
 deployments:
   multiconfig:
+    environment:
+      - DB_USER=devuser
     kubernetes_manifest: pod.yml, pod2.yml
     deployment_type: kubernetes
     kubernetes_default_pod: rss-site
@@ -11,5 +13,6 @@ deployments:
       password: $REGISTRY_PASSWORD_ARTIFACTORY
     kubernetes_secrets:
       - generic ssh-key-secret --from-file=ssh-privatekey=/home/test-instance/.ssh/id_rsa --from-file=ssh-publickey=/home/test-instance/.ssh/id_rsa.pub
+      - generic dev-db-secret --from-literal=username=$DB_USER --from-literal=password="$DB_PASSWORD"
       - generic db-user-pass --from-file=./username.txt --from-file=./password.txt
 
