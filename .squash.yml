@@ -9,6 +9,13 @@ deployments:
     subdomain_port_mapping: redmine:3000
     kubernetes_secrets:
       - generic ssh-key-secret --from-file=ssh-privatekey=/home/test-instance/.ssh/id_rsa --from-file=ssh-publickey=/home/test-instance/.ssh/id_rsa.pub
-      - generic dev-db-secret --from-literal=username=$DB_USER --from-literal=password="$DB_PASSWORD"
+      - generic dev-db-secret --from-literal=username="$REDIS" --from-literal=password="$DB_PASSWORD"
       - generic db-user-pass --from-file=./username.txt --from-file=./password.txt
+    depends_on:
+      - REDIS:
+          app: kubernetes-multiconfig:redis
 
+  redis:
+    kubernetes_helm_chart: stable/redis
+    port_forwarding: 6379:6379
+    check_service_ports: 6379
