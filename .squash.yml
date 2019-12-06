@@ -4,7 +4,7 @@ deployments:
       DB_USER=devuser
     kubernetes_manifest: pod.yml, pod2.yml
     deployment_type: kubernetes
-    kubernetes_default_image: rss-site
+    kubernetes_default_pod: rss-site
     kubernetes_port_mapping: redmine:3000
     subdomain_port_mapping: redmine:3000
     kubernetes_secrets:
