@@ -10,6 +10,17 @@
        image: nginx
        ports:
          - containerPort: 80
+       env:
+         - name: DB_USER
+           valueFrom:
+             secretKeyRef:
+               name: dev-db-secret
+               key: DB_USER
+         - name: DB_PASSWORD
+           valueFrom:
+             secretKeyRef:
+               name: dev-db-secret
+               key: DB_PASSWORD
      - name: rss-reader
        image: nickchase/rss-php-nginx:v1
        ports:
