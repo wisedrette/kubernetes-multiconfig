@@ -15,12 +15,12 @@
            valueFrom:
              secretKeyRef:
                name: dev-db-secret
-               key: DB_USER
+               key: username
          - name: DB_PASSWORD
            valueFrom:
              secretKeyRef:
                name: dev-db-secret
-               key: DB_PASSWORD
+               key: password
      - name: rss-reader
        image: nickchase/rss-php-nginx:v1
        ports:
