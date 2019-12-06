@@ -10,3 +10,14 @@
        image: redmine
        ports:
          - containerPort: 3000
+       env:
+         - name: DB_USER
+           valueFrom:
+             secretKeyRef:
+               name: dev-db-secret
+               key: DB_USER
+         - name: DB_PASSWORD
+           valueFrom:
+             secretKeyRef:
+               name: dev-db-secret
+               key: DB_PASSWORD
