@@ -17,5 +17,6 @@ deployments:
 
   redis:
     kubernetes_helm_chart: stable/redis
+    deployment_type: kubernetes    
     port_forwarding: 6379:6379
     check_service_ports: 6379
